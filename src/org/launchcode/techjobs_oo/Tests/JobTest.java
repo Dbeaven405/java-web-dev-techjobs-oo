@@ -66,12 +66,12 @@ public class JobTest {
         Job testJobFull = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"),new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        String expectedOutcome = "ID:  " + testJobFull.getId() + "\n" +
+        String expectedOutcome = "\nID:  " + testJobFull.getId() + "\n" +
                 "Name:  " + "Product tester" + '\n' +
                 "Employer:  " + "ACME" + '\n' +
                 "Location:  " + "Desert" + '\n' +
                 "Position Type:  " + "Quality control" + '\n' +
-                "Core Competency:  " + "Persistence";
+                "Core Competency:  " + "Persistence" +'\n';
         assertEquals(expectedOutcome, testJobFull.toString());
     }
 
@@ -81,12 +81,12 @@ public class JobTest {
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        String expectedOutcome = "ID:  " + testJobFull.getId() + "\n" +
+        String expectedOutcome = "\nID:  " + testJobFull.getId() + "\n" +
                 "Name:  " + "Data not available" + '\n' +
                 "Employer:  " + "Data not available" + '\n' +
                 "Location:  " + "Desert" + '\n' +
                 "Position Type:  " + "Quality control" + '\n' +
-                "Core Competency:  " + "Persistence";
+                "Core Competency:  " + "Persistence"+ '\n';
         assertEquals(expectedOutcome, testJobFull.toString());
     }
 }

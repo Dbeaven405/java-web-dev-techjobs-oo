@@ -51,43 +51,15 @@ public class Job {
 
     @Override
     public String toString() {
-//        return "";
-        String str;
-        if (getName() == ""
-                && getEmployer().getValue().equals("")
-                && getLocation().getValue().equals("")
-                && getPositionType().getValue().equals("")
-                && getCoreCompetency().getValue().equals("")
-        ) {
+        if (name == null && employer == null && location == null && positionType == null && coreCompetency == null){
             return "OOPS! This job does not seem to exist.";
         }
-
-        if (getName() == "") {
-            this.name = "Data not available";
-        }
-        if (getEmployer().getValue().equals("")) {
-            this.employer = new Employer("Data not available");
-        }
-
-        if (getLocation().getValue().equals("")) {
-            this.location = new Location("Data not available");
-        }
-        if (getPositionType().getValue().equals("")) {
-            this.positionType = new PositionType("Data not available");
-        }
-        if (getCoreCompetency().getValue().equals("")) {
-            this.coreCompetency = new CoreCompetency("Data not available");
-        }
-
-
-        str = "ID:  " + getId() +
-                "\nName:  " + getName() +
-                "\nEmployer:  " + getEmployer() +
-                "\nLocation:  " + getLocation() +
-                "\nPosition Type:  " + getPositionType() +
-                "\nCore Competency:  " + getCoreCompetency();
-
-        return str;
+        return "\n" + "ID:  " + id + "\n" +
+                "Name:  " + (!name.isEmpty() ? name:"Data not available") + '\n' +
+                "Employer:  " + (!employer.getValue().isEmpty() ? employer.getValue(): "Data not available") + '\n' +
+                "Location:  " + (!location.getValue().isEmpty() ? location.getValue(): "Data not available") + '\n' +
+                "Position Type:  " + (!positionType.getValue().isEmpty() ? positionType.getValue(): "Data not available") + '\n' +
+                "Core Competency:  " + (!coreCompetency.getValue().isEmpty() ? coreCompetency.getValue(): "Data not available") + "\n";
     }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
